@@ -24,7 +24,7 @@ class bookworm(scrapy.Spider):
         """
         name = response.css("div.col-sm-6.product_main h1::text").get()
         price = response.css("div.col-sm-6.product_main p.price_color::text").get()
-        url = response.meta["urlData"]
+        # url = response.meta["urlData"]
         date_today = date.today().isoformat()
         description = response.css("article.product_page p")[3].get()[3:-4]
         tax = response.css("table.table.table-striped tr td::text")[4].get()
@@ -34,7 +34,7 @@ class bookworm(scrapy.Spider):
 
         yield {
             "name": name,
-            "url": url,
+            "url": response.url,
             "scrape_date": date_today,
             "description": description,
             "price": price,
