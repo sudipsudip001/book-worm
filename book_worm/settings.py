@@ -24,7 +24,7 @@ ROBOTSTXT_OBEY = True
 # Concurrency and throttling settings
 #CONCURRENT_REQUESTS = 16
 CONCURRENT_REQUESTS_PER_DOMAIN = 1
-DOWNLOAD_DELAY = 2
+DOWNLOAD_DELAY = 0.2
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
@@ -87,11 +87,16 @@ DOWNLOAD_DELAY = 2
 FEED_EXPORT_ENCODING = "utf-8"
 
 FEEDS = {
-    "books.json": {
+    "/app/output/books.json": {
         "format": "json",
         "encoding": "utf-8",
         "indent": 4,
         "ensure_ascii": False,
-    }
+    },
+    # "books.json": {
+    #     "format": "json",
+    #     "encoding": "utf-8",
+    #     "indent": 4,
+    #     "ensure_ascii": False,
+    # },
 }
-
